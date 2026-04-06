@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-{% load static %}
 <html>
 <head>
     <title>Times de Futebol</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'times/istilo.css' %}">
 </head>
-<body>
+<body class="bg-dark text-light">
 
-    <h1> Times de Futebol</h1>
+<div class="container mt-5">
 
-    <div class="container">
+    <h1 class="text-center mb-4">Times de Futebol</h1>
+
+    <div class="row">
         {% for time in times %}
-            <div class="card">
-                <div class="nome">{{ time.nome }}</div>
-                <div class="info">📍 {{ time.cidade }}</div>
-                <div class="info">📅 Fundação: {{ time.fundacao }}</div>
+            <div class="col-md-6">
+                <div class="card-time text-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">{{ time.nome }}</h5>
+                        <p class="card-text">📍 {{ time.cidade }}</p>
+                        <p class="card-text">📅 Fundação: {{ time.fundacao }}</p>
+
+                        <a href="{% url 'editar_time' time.id %}" id="btn-editar" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'excluir_time' time.id %}" id="btn-excluir" class="btn btn-danger btn-sm">Excluir</a>
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
+
+</div>
 
 </body>
 </html>
