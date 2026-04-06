@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Times de Futebol</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'times/istilo.css' %}">
+</head>
+<body>
+
+    <h1> Times de Futebol</h1>
+
+    <div class="container">
+        {% for time in times %}
+            <div class="card">
+                <div class="nome">{{ time.nome }}</div>
+                <div class="info">📍 {{ time.cidade }}</div>
+                <div class="info">📅 Fundação: {{ time.fundacao }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
