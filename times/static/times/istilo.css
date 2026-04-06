@@ -17,6 +17,9 @@ h1 {
     padding: 20px;
     color: #ffe681;
 }
+.card-title{
+    padding-bottom:20px;
+}
 
 #btn-editar {
     background-color: cadetblue;
