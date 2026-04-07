@@ -78,6 +78,7 @@ python manage.py runserver
 
 ## Estrutura do projeto
 
+```
 times/
 ├── models.py
 ├── views.py
@@ -86,6 +87,7 @@ times/
 │   └── times/
 ├── static/
 │   └── times/
+```
 
 ---
 
