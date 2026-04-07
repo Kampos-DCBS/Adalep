@@ -34,7 +34,7 @@ Este projeto é uma aplicação web desenvolvida com **Django** que permite gere
 ### 1. Clone o repositório
 
 git clone [https://github.com/Kampos-DCBS/Adalep.git](https://github.com/Kampos-DCBS/Adalep.git)
-cd seu-repositorio
+cd Adalep
 
 ---
 
@@ -47,7 +47,7 @@ venv\Scripts\activate
 
 ### 3. Instale as dependências
 
-pip install -r requirements.txt
+pip install > requirements.txt
 
 ---
 
