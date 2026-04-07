@@ -5,11 +5,21 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #11cb9c 0%, #076ec2 40%, #0723c2 100%);
-    color: #f1f5f9;
     height: 100vh;
     margin: 0;
     padding: 0;
+    transition: background 0.5s ease, opacity 0.5s ease;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #11cb9c 0%, #076ec2 40%, #0723c2 100%) !important;
+}
+
+.bg-imagem {
+    background-image: url("/static/imgs/oficial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -63,4 +73,18 @@ h1 {
 .info {
     font-size: 14px;
     color: #cbd5f5;
+}
+
+.wallpaper{
+    background-color: cadetblue;
+    color: #f1f5f9;
+    border: none;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
 }

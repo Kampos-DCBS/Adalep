@@ -8,11 +8,34 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'times/istilo.css' %}">
 </head>
-<body class="bg-dark text-light">
+<body class="bg-gradient text-light" id="body">
 
 <div class="container mt-5">
 
     <h1 class="text-center mb-4">Times de Futebol</h1>
+    <div class="text-center mb-4">
+    <button class="btn btn-success" onclick="toggleForm()">Adicionar Novo Time</button>
+</div>
+
+<div id="form-criar" class="card-time p-3 mb-4" style="display:none;">
+    <form method="POST" action="{% url 'criar_time' %}">
+        {% csrf_token %}
+
+        <div class="mb-2">
+            <input type="text" name="nome" class="form-control" placeholder="Nome do time">
+        </div>
+
+        <div class="mb-2">
+            <input type="text" name="cidade" class="form-control" placeholder="Cidade">
+        </div>
+
+        <div class="mb-2">
+            <input type="number" name="fundacao" class="form-control" placeholder="Ano de fundação">
+        </div>
+
+        <button class="btn btn-success">Salvar</button>
+    </form>
+</div>
 
     <div class="row">
         {% for time in times %}
@@ -30,8 +53,43 @@
             </div>
         {% endfor %}
     </div>
-
 </div>
+
+<div class="text-center mt-4 mb-4">
+    <button class="btn btn-info" onclick="trocarFundo()">Wallpaper</button>
+</div>
+
+<script>
+function trocarFundo() {
+    const body = document.getElementById("body");
+
+    // inicia fade out
+    body.classList.add("fade-out");
+
+    setTimeout(() => {
+        if (body.classList.contains("bg-gradient")) {
+            body.classList.remove("bg-gradient");
+            body.classList.add("bg-imagem");
+        } else {
+            body.classList.remove("bg-imagem");
+            body.classList.add("bg-gradient");
+        }
+
+        // volta com fade in
+        body.classList.remove("fade-out");
+        body.classList.add("fade-in");
+
+        setTimeout(() => {
+            body.classList.remove("fade-in");
+        }, 500);
+
+    }, 300);
+}
+function toggleForm() {
+    const form = document.getElementById("form-criar");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+}
+</script>
 
 </body>
 </html>

@@ -18,17 +18,17 @@
 
         <div class="mb-3">
             <label>Nome</label>
-            <input type="text" name="nome" class="form-control" value="{{ time.nome }}">
+            <input type="text" name="nome" class="form-control" value="{{ time.nome }}" required>
         </div>
 
         <div class="mb-3">
             <label>Cidade</label>
-            <input type="text" name="cidade" class="form-control" value="{{ time.cidade }}">
+            <input type="text" name="cidade" class="form-control" value="{{ time.cidade }}" required>
         </div>
 
         <div class="mb-3">
             <label>Fundação</label>
-            <input type="number" name="fundacao" class="form-control" value="{{ time.fundacao }}">
+            <input type="number" name="fundacao" class="form-control" value="{{ time.fundacao }}" required>
         </div>
 
         <button type="submit" class="btn btn-success">Salvar</button>
